@@ -25,6 +25,16 @@ app.use(express.static('public'));
 app.engine('hbs', exphbs.engine( {extname: '.hbs'}));
 app.set('view engine', 'hbs');
 
+// Connection Pool
+const pool = mysql.createPool({
+
+});
+
+
+
+
+
+
 
 // Routing
 
