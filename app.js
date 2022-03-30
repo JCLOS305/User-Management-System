@@ -21,7 +21,9 @@ app.use(express.json()); //
 app.use(express.static('public'));
 
 
-
+// Handlebars-Template 
+app.engine('hbs', exphbs( {extname:'.hbs'}));
+app.set('view engine' 'hbs');
 
 
 app.listen(port, () => console.log('listening on port ${port}'));
