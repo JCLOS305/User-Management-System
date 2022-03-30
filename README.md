@@ -4,3 +4,5 @@
 [express handlebar error](https://stackoverflow.com/questions/69959820/typeerror-exphbs-is-not-a-function)
 
 [Bootstrap](https://getbootstrap.com/)
+
+[Incorrect Table Definitions](https://stackoverflow.com/questions/8114535/mysql-1075-incorrect-table-definition-autoincrement-vs-another-key)
