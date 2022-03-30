@@ -11,18 +11,18 @@ const port = process.env.PORT || 5000;
 //  Middleware
 // Parse application/x-www-form-urlencoded
 // app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.urlencoded({extended: true})); // 
+app.use(bodyParser.urlencoded({ extended: false })); // 
 
 //  application/json Parsing
-// app.use(bodyParser.json());
-app.use(express.json()); // 
+
+app.use(bodyParser.json());                                        
 
 // Static-Files
 app.use(express.static('public'));
 
 
 // Handlebars-Template 
-app.engine('hbs', exphbs( {extname: '.hbs'}));
+app.engine('hbs', exphbs.engine( {extname: '.hbs'}));
 app.set('view engine', 'hbs');
 
 
