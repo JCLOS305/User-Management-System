@@ -22,8 +22,16 @@ app.use(express.static('public'));
 
 
 // Handlebars-Template 
-app.engine('hbs', exphbs( {extname:'.hbs'}));
+app.engine('hbs', exphbs( {extname: '.hbs'}));
 app.set('view engine', 'hbs');
+
+
+// Routing
+
+app.get('',(req,res) => {
+    res.render('home');
+});
+
 
 
 app.listen(port, () => console.log('listening on port ${port}'));
