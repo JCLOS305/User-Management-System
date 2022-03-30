@@ -6,3 +6,5 @@
 [Bootstrap](https://getbootstrap.com/)
 
 [Incorrect Table Definitions](https://stackoverflow.com/questions/8114535/mysql-1075-incorrect-table-definition-autoincrement-vs-another-key)
+
+[XAMMP Server Installation](https://www.youtube.com/watch?v=O6T8YPUmyj8)
