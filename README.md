@@ -10,3 +10,5 @@
 [XAMMP Server Installation](https://www.youtube.com/watch?v=O6T8YPUmyj8)
 
 [nodemon installation](https://www.npmjs.com/package/nodemon)
+
+[Access Denied Error](https://stackoverflow.com/questions/40477625/nodejs-mysql-er-access-denied-error-access-denied-for-user-rootlocalhost)
