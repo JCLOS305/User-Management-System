@@ -42,12 +42,8 @@ pool.getConnection((err, connection) => {
 
 
 
-// Routing
-
-app.get('',(req,res) => {
-    res.render('home');
-});
-
+const routes = require('./Server/routes/user');
+app.use ('/', routes);
 
 
 app.listen(port, () => console.log('listening on port ${port}'));
