@@ -23,7 +23,7 @@ pool.getConnection((err, connection) => {
    console.log('Connected as ID ' + connection.threadId);
 
     // user the connection
-    connection.query('SELECT * FROM user', (err, rows) => {
+    connection.query('SELECT * FROM user WHERE status = "active"', (err, rows) => {
      // when done with the connection , release it
      connection.release();
 
@@ -35,9 +35,31 @@ pool.getConnection((err, connection) => {
 
 
         console.log('The data from user table: \n, rows');
-
-
     });
-});
+  });
+}
 
+
+// Find User by Searchbar
+exports.find = (req, res) => {
+
+    pool.getConnection((err, connection) => {
+        if (err) throw err; // broken connection
+        console.log('Connected as ID ' + connection.threadId);
+     
+
+        let searchTerm = req.body.search;
+
+         // user the connection
+         connection.query('SELECT * FROM user WHERE first_name LIKE ?', ['%' + searchTerm + '%'], (err, rows) => {
+          // when done with the connection , release it
+          connection.release();
+          if(!err) {
+              res.render('home', { rows });
+             } else {
+                 console.log(err);
+             }
+        console.log('The data from user table: \n', rows);
+         });
+       });
 }
