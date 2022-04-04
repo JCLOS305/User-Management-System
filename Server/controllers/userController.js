@@ -97,36 +97,7 @@ exports.update = (req, res) => {
   });
 }
 
-// Delete User
-exports.delete = (req, res) => {
 
-  // Delete a record
-
-  // User the connection
-  // connection.query('DELETE FROM user WHERE id = ?', [req.params.id], (err, rows) => {
-
-  //   if(!err) {
-  //     res.redirect('/');
-  //   } else {
-  //     console.log(err);
-  //   }
-  //   console.log('The data from user table: \n', rows);
-
-  // });
-
-  // Hide a record
-
-  connection.query('UPDATE user SET status = ? WHERE id = ?', ['removed', req.params.id], (err, rows) => {
-    if (!err) {
-      let removedUser = encodeURIComponent('User successeflly removed.');
-      res.redirect('/?removed=' + removedUser);
-    } else {
-      console.log(err);
-    }
-    console.log('The data from beer table are: \n', rows);
-  });
-
-}
 
 // View Users
 exports.viewall = (req, res) => {
@@ -142,3 +113,34 @@ exports.viewall = (req, res) => {
   });
 
 }
+
+// Delete User
+exports.delete = (req, res) => {
+
+    // Delete a record
+  
+    // User the connection
+    // connection.query('DELETE FROM user WHERE id = ?', [req.params.id], (err, rows) => {
+  
+    //   if(!err) {
+    //     res.redirect('/');
+    //   } else {
+    //     console.log(err);
+    //   }
+    //   console.log('The data from user table: \n', rows);
+  
+    // });
+  
+    // Hide a record
+  
+    connection.query('UPDATE user SET status = ? WHERE id = ?', ['removed', req.params.id], (err, rows) => {
+      if (!err) {
+        let removedUser = encodeURIComponent('User successeflly removed.');
+        res.redirect('/?removed=' + removedUser);
+      } else {
+        console.log(err);
+      }
+      console.log('The data from beer table are: \n', rows);
+    });
+  
+  }
